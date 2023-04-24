@@ -1,0 +1,4 @@
+#Mon Apr 24 20:56:12 IST 2023
+base.0=/Users/ashwanikumarsingh/StudioProjects/zethic_assignment/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

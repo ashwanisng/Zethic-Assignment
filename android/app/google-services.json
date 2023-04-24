@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94689994932",
+    "project_id": "zethic-assignment",
+    "storage_bucket": "zethic-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94689994932:android:3f828552eb9e6a0be48fe1",
+        "android_client_info": {
+          "package_name": "com.example.zethic_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94689994932-4skpobiv0ajbdkpcbir33q0vhf8mrjn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGq51__k7CL5LKlhqbAMnOSz3ejSEfwNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94689994932-4skpobiv0ajbdkpcbir33q0vhf8mrjn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

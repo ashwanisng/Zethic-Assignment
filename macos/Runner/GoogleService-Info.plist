@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>94689994932-nca2fo2rtf66siqp4c80ssa4al4jiprk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.94689994932-nca2fo2rtf66siqp4c80ssa4al4jiprk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCGtWuDoo2rwPNYGyCFvmAP8qbS8Vb4b9s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>94689994932</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.zethicAssignment</string>
+	<key>PROJECT_ID</key>
+	<string>zethic-assignment</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zethic-assignment.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:94689994932:ios:90a4aed4dd66caa4e48fe1</string>
+</dict>
+</plist>
