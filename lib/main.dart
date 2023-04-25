@@ -22,7 +22,7 @@ class App extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute:  Routes.HOME,
+      initialRoute:  Routes.SPLASH,
       getPages: AppPages.routes,
       defaultTransition: Transition.native,
       initialBinding: AppBinding(),

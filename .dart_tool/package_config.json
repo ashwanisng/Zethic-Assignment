@@ -164,6 +164,12 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "get_storage",
+      "rootUri": "file:///Users/ashwanikumarsingh/src/flutter/.pub-cache/hosted/pub.dartlang.org/get_storage-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "http",
       "rootUri": "file:///Users/ashwanikumarsingh/src/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5",
       "packageUri": "lib/",
@@ -398,7 +404,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-04-24T15:19:04.260605Z",
+  "generated": "2023-04-25T09:22:36.320077Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }

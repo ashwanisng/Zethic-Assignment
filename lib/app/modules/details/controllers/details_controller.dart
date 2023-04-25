@@ -1,11 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DetailsController extends GetxController {
-  //TODO: Implement DetailsController
+  late String name;
+  late String imageUrl;
+  late String description;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    dynamic data = Get.arguments;
+
+    name = data["placeName"];
+    imageUrl = data["imageUrl"];
+    description = data["description"];
+
     super.onInit();
   }
 
@@ -18,6 +26,4 @@ class DetailsController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

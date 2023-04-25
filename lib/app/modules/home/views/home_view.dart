@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:zethic_assignment/app/data/lakes_services.dart';
 import 'package:zethic_assignment/app/data/mountains_services.dart';
 import 'package:zethic_assignment/app/routes/app_pages.dart';
+import 'package:zethic_assignment/app/services/storage_services.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -14,8 +15,27 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
         centerTitle: true,
+        backgroundColor: const Color(0xffF8F5EE),
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.logout();
+              StorageServices.clearUserData();
+            },
+            icon: const Icon(
+              Icons.logout,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +45,10 @@ class HomeView extends GetView<HomeController> {
             children: [
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Text("Lakes"),
+                child: Text(
+                  "Lakes",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                ),
               ),
               SizedBox(
                 height: 250,
@@ -52,7 +75,10 @@ class HomeView extends GetView<HomeController> {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Text("Mountains"),
+                child: Text(
+                  "Mountains",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                ),
               ),
               SizedBox(
                 height: 250,
@@ -95,13 +121,14 @@ class HomeView extends GetView<HomeController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CachedNetworkImage(
-                width: 200,
-                height: 180,
-                fit: BoxFit.fill,
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                imageUrl: imageUrl,
-              ),
+                  width: 200,
+                  height: 180,
+                  fit: BoxFit.fill,
+                  placeholder: (context, url) =>
+                      Image.asset("assets/images/placeholder.png"),
+                  imageUrl: imageUrl,
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error)),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(placeName),

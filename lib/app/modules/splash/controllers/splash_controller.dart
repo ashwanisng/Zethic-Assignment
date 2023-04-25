@@ -1,11 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:zethic_assignment/app/routes/app_pages.dart';
+import 'package:zethic_assignment/app/services/storage_services.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
+  var shouldAnimate = false.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    navigateToNextScreen();
     super.onInit();
   }
 
@@ -16,5 +19,22 @@ class SplashController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
+
+  Future navigateToNextScreen() async {
+
+    debugPrint("dddd ${StorageServices.getLoginStatus()}");
+    await Future.delayed(
+      const Duration(
+        seconds: 1,
+        milliseconds: 500,
+      ),
+      () {
+        if (StorageServices.getLoginStatus() != null) {
+          Get.offAllNamed(Routes.HOME);
+        } else {
+          Get.offAllNamed(Routes.LOGIN);
+        }
+      },
+    );
+  }
 }

@@ -8,6 +8,8 @@ class LoginController extends GetxController {
   RxBool isEnabled = false.obs;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  RxBool isLoading = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -22,6 +24,7 @@ class LoginController extends GetxController {
   void onClose() {}
 
   signInWithNumber() async {
+    isLoading.value = true;
     await _auth.verifyPhoneNumber(
       phoneNumber: '+91-${phoneController.text}',
       timeout: const Duration(seconds: 60),
@@ -29,6 +32,7 @@ class LoginController extends GetxController {
       verificationFailed: (FirebaseAuthException e) {},
       codeAutoRetrievalTimeout: (String verificationId) {},
       codeSent: (String verificationId, int? forceResendingToken) {
+        isLoading.value = false;
         Get.toNamed(
           Routes.OTP_SCREEN,
           arguments: {
