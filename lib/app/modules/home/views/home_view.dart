@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zethic_assignment/app/data/lakes_services.dart';
+import 'package:zethic_assignment/app/data/mountains_services.dart';
+import 'package:zethic_assignment/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -25,14 +28,52 @@ class HomeView extends GetView<HomeController> {
                 child: Text("Lakes"),
               ),
               SizedBox(
-                height: 210,
+                height: 250,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 30,
+                  itemCount: LakesServices.data.length,
                   itemBuilder: (context, index) {
-                    return customCard(
-                        imageUrl: 'https://via.placeholder.com/200x150',
-                        placeName: "Lakes-$index");
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.DETAILS, arguments: {
+                          "imageUrl": LakesServices.data[index].image ?? "",
+                          "placeName": LakesServices.data[index].name ?? "",
+                          "description":
+                              LakesServices.data[index].description ?? "",
+                        });
+                      },
+                      child: customCard(
+                        imageUrl: LakesServices.data[index].image ?? "",
+                        placeName: LakesServices.data[index].name ?? "",
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Text("Mountains"),
+              ),
+              SizedBox(
+                height: 250,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: MountainsService.data.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.DETAILS, arguments: {
+                          "imageUrl": MountainsService.data[index].image ?? "",
+                          "placeName": MountainsService.data[index].name ?? "",
+                          "description":
+                              MountainsService.data[index].description ?? "",
+                        });
+                      },
+                      child: customCard(
+                        imageUrl: MountainsService.data[index].image ?? "",
+                        placeName: MountainsService.data[index].name ?? "",
+                      ),
+                    );
                   },
                 ),
               )
@@ -54,6 +95,9 @@ class HomeView extends GetView<HomeController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CachedNetworkImage(
+                width: 200,
+                height: 180,
+                fit: BoxFit.fill,
                 placeholder: (context, url) =>
                     const CircularProgressIndicator(),
                 imageUrl: imageUrl,

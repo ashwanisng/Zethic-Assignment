@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/details/bindings/details_binding.dart';
+import '../modules/details/views/details_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.OTP_SCREEN,
       page: () => const OtpScreenView(),
       binding: OtpScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAILS,
+      page: () => const DetailsView(),
+      binding: DetailsBinding(),
     ),
   ];
 }

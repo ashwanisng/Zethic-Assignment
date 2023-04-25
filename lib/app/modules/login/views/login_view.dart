@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:get/get.dart';
-import 'package:zethic_assignment/app/routes/app_pages.dart';
 
 import '../controllers/login_controller.dart';
 

@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
+import 'package:zethic_assignment/app/data/lakes_services.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
 
-  final count = 0.obs;
+  LakesServices placesService = LakesServices();
+
   @override
   void onInit() {
+   var data =  LakesServices.data;
     super.onInit();
   }
 
@@ -16,5 +18,4 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }
